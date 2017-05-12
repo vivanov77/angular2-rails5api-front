@@ -1,0 +1,17 @@
+
+<!-- <div *ngIf="loading question">loading...</div> -->
+
+<ng-container *ngIf="question && question?.id">
+
+<questions-form [question]="question"
+[submit_button_name]="form_submit_button_name"
+(onQuestionSubmitted)="questionWasSubmitted($event)"></questions-form>
+    
+</ng-container>
+
+
+<ng-container *ngIf="error_data">
+
+<pre>{{error_data}}</pre>
+
+</ng-container>

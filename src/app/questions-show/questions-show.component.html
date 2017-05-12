@@ -1,0 +1,19 @@
+<div *ngIf="loading">loading...</div>
+
+<ng-container *ngIf="question && question?.id">
+
+<div>
+<div>Номер: {{ question.id }}</div>
+<div>Заголовок: {{ question.title }}</div>
+</div>
+
+<p></p>
+<a [routerLink]="['/api/questions', question.id, 'edit' ]">Редактировать</a>
+
+</ng-container>
+
+<ng-container *ngIf="error_data">
+
+<pre>{{error_data}}</pre>
+
+</ng-container>

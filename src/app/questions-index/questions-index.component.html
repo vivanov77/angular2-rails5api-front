@@ -1,0 +1,47 @@
+<h2>Работа с вопросами</h2>
+
+<div *ngIf="loading">loading...</div>
+
+<!-- <ng-container *ngIf="data && data.length > 0"> -->
+
+<!-- <ng-container *ngIf="data && data.length > 0">
+
+<pre>{{data}}</pre>
+
+</ng-container> -->
+
+<!-- <pre>{{data | json}}</pre> убрать -->
+
+<table>
+<thead>
+<tr>
+<th>Номер</th>
+<th>Заголовок</th>
+
+</tr>
+</thead>
+
+<tr>
+<td></td>
+<td>Несуществующий вопрос</td>
+<td><a [routerLink]="['/api/questions/show/0' ]">Показать</a></td>
+<td><a [routerLink]="['/api/questions', 0, 'edit' ]" style="display:inline-block; width:8em;">Редактировать</a></td>
+<td><a href (click)="destroyQuestion(0)">Удалить</a></td>
+</tr>
+
+
+<tr *ngFor="let question of questions">
+<td>{{ question.id }}</td>
+<td>{{ question.title }}</td>
+<td><a [routerLink]="['/api/questions/show', question.id ]" style="display:inline-block; width:8em;">Показать</a></td>
+<td><a [routerLink]="['/api/questions', question.id, 'edit' ]" style="display:inline-block; width:8em;">Редактировать</a></td>
+<td><a href (click)="destroyQuestion(question.id)">Удалить</a></td>
+</tr>
+
+</table>
+
+<!-- </ng-container> -->
+
+<p>
+<a [routerLink]="['/api/questions/new']">Новый вопрос</a>
+</p>

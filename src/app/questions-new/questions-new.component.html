@@ -1,0 +1,5 @@
+<div *ngIf="loading">loading...</div>
+
+<questions-form [question]="question"
+[submit_button_name]="form_submit_button_name"
+(onQuestionSubmitted)="questionWasSubmitted($event)"></questions-form>

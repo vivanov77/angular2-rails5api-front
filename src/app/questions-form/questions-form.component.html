@@ -1,0 +1,15 @@
+<form [formGroup]="question_form"
+      (ngSubmit)="onSubmit(question_form.value)">
+
+  <label for="titleNameInput">Заголовок вопроса:</label>
+  <input type="text"
+         id="titleNameInput"
+         placeholder="Вопрос"
+         [formControl]="question_form.get('title')" 
+         [ngModel]="question.title"
+         >
+        <!-- formControlName="title" -->
+  <p></p>
+
+  <button type="submit">{{submit_button_name}}</button>
+</form>
